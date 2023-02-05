@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Somando Números</title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+        #calculo{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        
+        }
+        input{
+            width: 50px;
+        }
+
+        input[type=button]{
+            
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <div id="calculo">
+        <input type="number" name="n1" id="in1"> +
+        <input type="number" name="n2" id="in2">
+        <input type="button" value="Somar" onclick="somar()">
+    </div>
+    <div id="res">
+        Resultado
+    </div>
+    <script>
+        function somar(){
+            var tn1 = window.document.querySelector('input#in1')
+            var tn2 = window.document.querySelector('input#in2')
+            var res = window.document.querySelector('div#res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var soma = n1 + n2
+
+            res.innerHTML = (`A soma de ${n1} e ${n2} é ${soma}!`)
+        }
+    </script>
+</body>
+</html>

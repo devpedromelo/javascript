@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 01</title>
+    <style>
+        body{
+            background-color: darkblue;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+        }
+
+        div.msg{
+            width: 460px;
+            cursor: pointer;
+        }
+
+        p{
+            display: none;
+        }
+
+        div.msg:hover > p{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="msg">
+        <h1>Olá, Mundo!</h1>
+        <p>Já me livrei da maldição!</p>
+    </div>
+
+    <script>
+        var n1 = Number.parseInt(window.prompt('Digite um número!'));
+        var n2 = Number.parseFloat(window.prompt('Digite outro número!'));
+        var s = (n1 + n2);
+        window.alert(`A soma de ${n1} + ${n2} é ${s}`);
+    </script>
+</body>
+</html>
