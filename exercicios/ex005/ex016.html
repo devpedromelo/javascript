@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horas</title>
+</head>
+<body>
+    <h1>Horas</h1>
+    Digite seu horário: <input type="number" name="hora" id="ihora"> <br>
+    <input type="button" value="Verificar" onclick="hora()">
+    <div id="result">
+
+    </div>
+
+    <script>
+        function hora(){
+            var horatxt = document.querySelector('input#ihora')
+            var horanum = Number(horatxt.value)
+            var res = document.querySelector('div#result')
+            if(horanum >= 1.00 && horanum <= 5.59){
+                res.innerHTML = 'Boa Madrugada!'
+            }else{
+                if(horanum >= 6.00 && horanum <= 11.59){
+                    res.innerHTML = 'Bom Dia!'
+                }else{
+                    if(horanum >= 12.00 && horanum <= 17.59){
+                        res.innerHTML = 'Boa Tarde'
+                    }else{
+                        res.innerHTML = 'Boa Noite'
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

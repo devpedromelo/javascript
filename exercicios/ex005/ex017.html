@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dia da Semana</title>
+</head>
+<body>
+    <h1>Dia da Semana</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="result">
+
+    </div>
+    <script>
+        function verificar(){
+            var hora = new Date()
+            var diaSem = hora.getDay()
+            var mostrarDia = document.querySelector('div#result')
+
+            switch (diaSem){
+                case 0: 
+                    mostrarDia.innerHTML = 'Domingo!'
+                    break
+                case 1: 
+                    mostrarDia.innerHTML = 'Segunda-feira!'
+                    break
+                case 2: 
+                    mostrarDia.innerHTML = 'Terça-feira!'
+                    break
+                case 3: 
+                    mostrarDia.innerHTML = 'Quarta-feira!'
+                    break
+                case 4: 
+                    mostrarDia.innerHTML = 'Quinta-feira!'
+                    break
+                case 5: 
+                    mostrarDia.innerHTML = 'Sexta-feira!'
+                    break
+                case 6: 
+                    mostrarDia.innerHTML = 'Sábado!'
+                    break
+            }
+        }
+    </script>
+</body>
+</html>
