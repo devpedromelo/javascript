@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horário Ao Vivo</title>
+</head>
+<body>
+    <input type="button" value="Verifique seu horário!" onclick="verificar()">
+    <div id="result">
+
+    </div>
+    <script>
+        function verificar(){
+            var hora = new Date()
+            var horario = hora.getHours()
+            var res = document.querySelector('div#result')
+            if(horario >= 1.00 && horario <= 5.59){
+                res.innerHTML = `Boa Madrugada, seu horário é de: ${horario} horas da madrugada!`
+            }else{
+                if(horario >= 6.00 && horario <= 11.59){
+                    res.innerHTML = `Bom Dia, seu horário é de: ${horario} horas da manhã! `
+                }else{
+                    if(horario >= 12.00 && horario <= 17.59){
+                        res.innerHTML = `Bom Tarde, seu horário é de: ${horario} horas da tarde! `
+                    }else{
+                        res.innerHTML = `Bom Noite, seu horário é de: ${horario} horas da noite! `
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
