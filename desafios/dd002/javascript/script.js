@@ -1,5 +1,3 @@
-//var nome = window.prompt('Bem-vindo! Qual o seu nome?')
-//window.document.querySelector('div#msg').innerHTML = (`<p>Olá, <strong>${nome}</strong>! Verifique o seu horário e tenha imagens personalizadas de acordo com a hora!</p>`)
 
 function verificar(){
     var msg = window.document.querySelector('div#msg')
