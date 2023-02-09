@@ -31,7 +31,7 @@ div{
     padding: 10px;
 }
 
-form input{
+input{
     margin: 8px;
 }
 
@@ -44,38 +44,6 @@ input[type=button]{
 
 img{
     width: 300px;
-}
-
-#criancam{
-    display: none;
-}
-
-img#criancaf{
-    display: none;
-}
-
-img#jovemm{
-    display: none;
-}
-
-img#jovemf{
-    display: none;
-}
-
-img#adultom{
-    display: none;
-}
-
-img#adultof{
-    display: none;
-}
-
-img#idosom{
-    display: none;
-}
-
-img#idosof{
-    display: none;
 }
 
 footer{
