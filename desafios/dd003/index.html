@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/style.css">
+    <title>Verificador de idade!</title>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section>
+        <div id="verificador">
+            <form action=".">
+                <p>
+                    <label for="iano">Ano de Nascimento:</label> <input type="number" name="ano" id="iano" min="1940" max="2023"><br>
+                </p>
+                <p>Sexo:
+                    <input type="radio" name="radsex" id="masc" required checked>
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="radsex" id="fem" required>
+                    <label for="fem">Feminino</label>
+                </p>
+                <p>
+                    <input type="button" value="Verificar" onclick="verificar()">
+                </p>
+            </form>
+        </div>
+        <div id="result">
+            Preencha o formulário e verificaremos a sua idade!
+
+            <div id="criancam">
+                <img src="imagens/crianca-masc.png" alt="">
+            </div>
+
+            <img src="imagens/crianca-fem.png" alt="" id="criancaf">
+
+            <img src="imagens/jovem-masc.png" alt="" id="jovemm">
+
+            <img src="imagens/jovem-fem.png" alt="" id="jovemf">
+
+            <img src="imagens/adulto-masc.png" alt="" id="adultom">
+
+            <img src="imagens/adulto-fem.png" alt="" id="adultof">
+
+            <img src="imagens/idoso-masc.png" alt="" id="idosom">
+
+            <img src="imagens/idoso-fem.png" alt="" id="idosof">
+        </div>
+    </section>
+    <footer>
+        &copy;devpedromelo
+    </footer>
+
+    <script src="javascript/script.js">
+
+    </script>
+</body>
+</html>

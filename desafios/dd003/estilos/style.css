@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: rgb(135, 189, 212);
+}
+
+header{
+    text-align: center;
+    font-size: 2em;
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.219);
+}
+
+section{
+    background-color: white;
+    width: 500px;
+    margin: auto;
+    border-radius: 8px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.285);
+}
+
+div{
+    padding: 10px;
+}
+
+form input{
+    margin: 8px;
+}
+
+input[type=button]{
+    margin-left: 175px;
+    margin-top: 25px;
+    padding: 0px 20px 0px 20px;
+    font-size: 1.1em;
+}
+
+img{
+    width: 300px;
+}
+
+#criancam{
+    display: none;
+}
+
+img#criancaf{
+    display: none;
+}
+
+img#jovemm{
+    display: none;
+}
+
+img#jovemf{
+    display: none;
+}
+
+img#adultom{
+    display: none;
+}
+
+img#adultof{
+    display: none;
+}
+
+img#idosom{
+    display: none;
+}
+
+img#idosof{
+    display: none;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bolder;
+    padding: 10px;
+}
