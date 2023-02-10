@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dobro e Metade</title>
+</head>
+<body>
+    <h1>Dobro e Metade</h1>
+    <input type="button" value="Clique para começar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar(){
+            var txtn = window.prompt('Digite um numero: ')
+            var n = Number(txtn)
+            var dobro = n * 2
+            var metade = n / 2
+            var res = document.querySelector('div#res')
+
+            res.innerHTML = (`O dobro de ${n} é ${dobro} e a metade é ${metade}.`)
+        }
+    </script>
+</body>
+</html>
