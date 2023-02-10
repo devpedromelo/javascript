@@ -18,7 +18,7 @@
             var nome = window.prompt('Qual o seu nome?')
             var n1 = Number(window.prompt(`Qual foi a primeira nota de ${nome}?`))
             var n2 = Number(window.prompt(`Àlém de ${n1}, qual foi a segunda nota de ${nome}?`))
-            media = (n1 + n2) / 2
+            var media = (n1 + n2) / 2
             var res = window.document.querySelector('div#result')
             if(media >= 6){
                 res.innerHTML = `O(A) aluno que vamos calcular as médias é o(a) ${nome} <hr> A primeira nota foi: <strong><mark>${n1}</mark></strong> <br> A segunda nota foi: <strong><mark>${n2}</mark></strong> <br> A média foi de: <strong><mark>${media}</mark></strong> <br> <strong>Meus Parabéns</strong>`
