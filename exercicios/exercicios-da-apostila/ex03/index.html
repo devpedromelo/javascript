@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média</title>
+</head>
+<body>
+    <h1>Calculando Médias</h1>
+    <input type="button" value="Começar" onclick="media()">
+    <div id="res">
+
+    </div>
+
+    <script>
+        function media(){
+            var nome = window.prompt('Qual o nome do aluno?:')
+            var nota1 = Number(window.prompt(`Qual a primeira nota de ${nome}?`))
+            var nota2 = Number(window.prompt(`Além de ${nota1}, qual foi a segunda nota de ${nome}?`))
+            var media = (nota1 + nota2) / 2
+            var res = document.querySelector('div#res')
+
+            res.innerHTML = `As notas de ${nome} foi ${nota1} e ${nota2}, portando a média dele(a) é: <strong>${media}</strong>.`
+        }
+    </script>
+</body>
+</html>

@@ -15,11 +15,12 @@
 
     <script>
         function soma(){
-            var texton1 = window.prompt('Digite um número: ')
-            var n1 = Number(texton1.value)
+            var n1 = Number(window.prompt('Digite um número: '))
+            var n2 = Number(window.prompt('Digite um outro número: '))
+            var soma = n1 + n2
             var res = document.querySelector('div#resposta')
 
-            res.innerHTML = `valor 1: ${n1}`
+            res.innerHTML = `A soma de ${n1} + ${n2} é de <strong>${soma}</strong>.`
         }
     </script>
 </body>
