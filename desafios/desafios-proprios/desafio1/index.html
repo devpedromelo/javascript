@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/style.css">
+    <title>Verificador de idade!</title>
+</head>
+<body>
+    <header>
+        <h1>Verificador de Idade</h1>
+    </header>
+    <section id="secao">
+        <div id="formulario">
+            <form>
+                <p>Ano de Nascimento:
+                    <input type="number" name="txtano" id="txtano" required>
+                </p>
+                <p>Sexo:
+                    <input type="radio" name="radsex" id="masc" required checked>
+                    <label for="masc">Masculino</label>
+                    <input type="radio" name="radsex" id="fem">
+                    <label for="fem">Feminino</label>
+                </p>
+                <p>
+                    <input type="button" value="Verificar" onclick="verificar()">
+                </p>
+            </form>
+        </div>
+        <div id="result">
+            <p>Preencha o formulário e verificaremos a sua idade!</p>
+        </div>
+    </section>
+    <footer id="rodape">
+        &copy;devpedromelo
+    </footer>
+
+    <script src="javascript/script.js">
+
+    </script>
+</body>
+</html>
