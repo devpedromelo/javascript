@@ -19,16 +19,15 @@ header{
     text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.219);
 }
 
-section{
+main{
     background-color: white;
-    height: 170px;
-    width: 470px;
+    width: 500px;
     margin: auto;
     border-radius: 8px;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.285);
 }
 
-div#formulario{
+div{
     padding: 10px;
 }
 
@@ -37,14 +36,10 @@ input{
 }
 
 input[type=button]{
-    margin-left: 15px;
+    margin-left: 175px;
     margin-top: 25px;
     padding: 0px 20px 0px 20px;
     font-size: 1.1em;
-}
-
-p{
-    text-align: center;
 }
 
 img{

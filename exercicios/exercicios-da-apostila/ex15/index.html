@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Múltiplas Ações</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 20px 30px 20px 30px;
+        }
+
+        input[type=button]{
+            padding: 20px 60px 20px 60px;
+            margin-left: 29px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Múltiplas Ações</h1>
+    <input type="button" value="Clicar" onclick="calcular()">
+        <div id="result">
+            Clique no botão para começar
+        </div>
+
+    <script>
+        var res = document.querySelector('div#result')
+
+        function calcular(){
+        var n1 = Number(window.prompt('Digite um número: '))
+        var n2 = Number(window.prompt('Digite outro número: ')) 
+        var opcao = Number(window.prompt(`Os valores informados foram: ${n1} e ${n2}. 
+        O que quer fazer com eles? 
+         [1]- Somar 
+         [2]- Subtrair
+         [3]- Multiplicar 
+         [4]- Dividir`))
+            if(opcao == 1){
+                var soma = n1 + n2
+                res.innerHTML = `<h1>Calculando...</h1> <br> A soma de ${n1} e ${n2} é ${soma}!`
+            }else if(opcao == 2){
+                var soma = n1 - n2
+                res.innerHTML = `<h1>Calculando...</h1> <br> A subtração de ${n1} e ${n2} é ${soma}!`
+            }else if(opcao == 3){
+                var soma = n1 * n2
+                res.innerHTML = `<h1>Calculando...</h1> <br> A multiplicação de ${n1} e ${n2} é ${soma}!`
+            }else if(opcao == 4){
+                var soma = n1 / n2
+                res.innerHTML = `<h1>Calculando...</h1> <br> A divisão de ${n1} e ${n2} é ${soma}!`
+            }else{
+                res.innerHTML = `<h1>ERRO</h1> <br> OPÇÃO INVÁLIDA, você me deu os números ${n1} e ${n2}, mas não sei o que fazer com eles :/`
+            }
+        }
+    </script>

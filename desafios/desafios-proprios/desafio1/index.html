@@ -5,34 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/style.css">
-    <title>Verificador de idade!</title>
+    <title>Verificando Idades</title>
 </head>
 <body>
     <header>
-        <h1>Verificador de Idade</h1>
+        <h1>Verificando Idades</h1>
     </header>
-    <section id="secao">
-        <div id="formulario">
-            <form>
-                <p>Ano de Nascimento:
-                    <input type="number" name="txtano" id="txtano" required>
-                </p>
+    <main>
+        <div>
+            <form action="@">
+                <label for="txtano">Ano de Nascimento</label>
+                <input type="number" name="txtano" id="txtano" required>
+                
                 <p>Sexo:
-                    <input type="radio" name="radsex" id="masc" required checked>
+                    <input type="radio" name="rad" id="masc" checked>
                     <label for="masc">Masculino</label>
-                    <input type="radio" name="radsex" id="fem">
+                    <input type="radio" name="rad" id="fem">
                     <label for="fem">Feminino</label>
                 </p>
-                <p>
-                    <input type="button" value="Verificar" onclick="verificar()">
-                </p>
+                <input type="button" value="Verificar" onclick="verificar()">
             </form>
         </div>
         <div id="result">
-            <p>Preencha o formulário e verificaremos a sua idade!</p>
+            Preencha o formulário para calcularmos sua idade!
         </div>
-    </section>
-    <footer id="rodape">
+    </main>
+    <footer>
         &copy;devpedromelo
     </footer>
 
