@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Número Maior</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 20px 60px 20px 60px;
+            margin-left: 29px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Interagindo com o sistema</h1>
+    <input type="button" value="Começar" onclick="sistema()">
+    <div id="result">
+        A mensagem vai aparecer aqui...
+    </div>
+
+    <script>
+        function sistema(){
+            var tano = new Date()
+            var diaSemana = tano.getDay()
+                if(diaSemana == 0){
+                    diaSemana = 'Domingo'
+                }else if(diaSemana == 1){
+                    diaSemana = 'Segunda-Feira'
+                }else if(diaSemana == 2){
+                    diaSemana = 'Terça-Feira'
+                }else if(diaSemana == 3){
+                    diaSemana = 'Quarta-Feira'
+                }else if(diaSemana == 4){
+                    diaSemana = 'Quinta-Feira'
+                }else if(diaSemana == 5){
+                    diaSemana = 'Sexta-Feira'
+                }else if(diaSemana == 6){
+                    diaSemana = 'Sábado'
+                }
+            var dia = tano.getDate()
+            var mes = tano.getMonth()
+                if(mes == 0){
+                    mes = 'janeiro'
+                }else if(mes == 1){
+                    mes = 'fevereiro'
+                }else if(mes == 2){
+                    mes = 'março'
+                }else if(mes == 3){
+                    mes = 'abril'
+                }else if(mes == 4){
+                    mes = 'maio'
+                }else if(mes == 5){
+                    mes = 'junho'
+                }else if(mes == 6){
+                    mes = 'julho'
+                }else if(mes == 7){
+                    mes = 'agosto'
+                }else if(mes == 8){
+                    mes = 'setembro'
+                }else if(mes == 9){
+                    mes = 'outubro'
+                }else if(mes == 10){
+                    mes = 'novembro'
+                }else if(mes == 11){
+                    mes = 'dezembro'
+                }
+            var ano = tano.getFullYear()
+            var hora = tano.getHours()
+            var minutos = tano.getMinutes()
+            var segundos = tano.getSeconds()
+            var res = document.querySelector('div#result')
+
+            res.innerHTML = `A mensagem que recebi do sistema foi: <mark>${diaSemana} ${dia} de ${mes} de ${ano} ${hora}:${minutos}:${segundos} Horário de Brasília</mark>`
+        }
+    </script>

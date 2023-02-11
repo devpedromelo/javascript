@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advinhação</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 20px 30px 20px 30px;
+        }
+
+        input[type=button]{
+            padding: 20px 60px 20px 60px;
+            margin-left: 29px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Adivinhação</h1>
+    <div id="botao">
+        <input type="button" value="Tente adivinhar" onclick="gerar()">
+        <input type="button" value="Dica" onclick="dica()">
+    </div>
+    <div id="result">
+        Pensei em um número entre 1 e 100, quer tentar adivinhar?
+    </div>
+
+    <script>
+        var min = 1
+        var max = 100
+        var dif = max - min //99
+        var numAleatorio = Math.trunc(dif * Math.random()) + min
+        var res = document.querySelector('div#result')
+
+        var dica1 = numAleatorio - 5 //dica
+        var dica2 = numAleatorio + 5 //dica
+
+        function gerar(){
+            var palpite = Number(window.prompt('Qual o seu palpite?'))
+                if(palpite > numAleatorio){
+                    res.innerHTML = `Seu palpite foi ${palpite}, meu número é <strong>MENOR!</strong>!`
+                }else if(palpite < numAleatorio){
+                    res.innerHTML = `Seu palpite foi ${palpite}, meu número é <strong>MAIOR!</strong>!`
+                }else if(palpite == numAleatorio){
+                    document.body.input = null
+                    res.innerHTML = `Parabéns, você acertou!!!!! O número que pensei foi <strong>${numAleatorio}</strong>!`
+                    document.getElementById('botao').style.visibility = 'hidden'
+                }
+        }
+
+        function dica(){
+            res.innerHTML = `O numero que pensei está entre <strong>${dica1}</strong> e <strong>${dica2}</strong>`
+        }
+    </script>

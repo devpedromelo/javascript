@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Número Maior</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 20px 60px 20px 60px;
+            margin-left: 29px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Qual é maior?</h1>
+    <input type="button" value="Começar" onclick="maior()">
+    <div id="result">
+        A mensagem vai aparecer aqui...
+    </div>
+
+    <script>
+        function maior(){
+            var n1 = Number(window.prompt('Digite um número: '))
+            var n2 = Number(window.prompt('Digite um outro número: '))
+            var res = document.querySelector('div#result')
+                if(n1 > n2){
+                    res.innerHTML = `Os números analisados serão: <mark>${n1}</mark> e <mark>${n2}</mark> <hr> O número maior é ${n1}`
+                }else if(n2 > n1){
+                    res.innerHTML = `Os números analisados serão: <mark>${n1}</mark> e <mark>${n2}</mark> <hr> O número maior é ${n2}`
+                }
+        }
+    </script>

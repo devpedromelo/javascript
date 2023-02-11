@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Idade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 20px 60px 20px 60px;
+            margin-left: 29px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Calculando Idade</h1>
+    <input type="button" value="Iniciar" onclick="idade()">
+    <div id="result">
+        A mensagem vai aparecer aqui...
+    </div>
+
+    <script>
+        function idade(){
+            var tano = new Date()
+            var ano = tano.getFullYear()
+            var txtano = Number(window.prompt('Digite o ano que você nasceu: '))
+            var res = document.querySelector('div#result')
+                if(txtano <= 0 || txtano > ano){
+                    window.alert('[Erro], tente novamente')
+                }else{
+                    var idade = ano - txtano
+                }
+            res.innerHTML = `Quem nasceu em ${txtano} tem ou vai completar ${idade} em ${ano}`
+        }
+    </script>
