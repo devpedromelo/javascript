@@ -1,13 +1,16 @@
 var res = document.querySelector('div#result')
 function tabuada(){
     var num = document.querySelector('input#txtnum')
+    var tab = document.getElementById('settab')
     var n = Number(num.value)
     var c = 0
     var resultado = ''
-    res.innerHTML = '<h2>Contando...</h2> <br>'
+    tab.innerHTML = ''
         while(c<=10){
+            var item = document.createElement('option')
             resultado = n * c
-            res.innerHTML += `${n} x ${c} = ${resultado} <br>`
+            item.text = `${n} x ${c} = ${resultado}`
+            tab.appendChild(item)
             c = c + 1
         }
 }
