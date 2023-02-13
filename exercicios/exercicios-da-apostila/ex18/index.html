@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Contando de 1 até 10</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 20px 30px 20px 30px;
+        }
+
+        input[type=button]{
+            padding: 20px 60px 20px 60px;
+            margin-left: 29px;
+            margin-bottom: 30px;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Contando de 1 até 10(marcando os pares)</h1>
+    <input type="button" value="Contar" onclick="contar()">
+        <div id="result">
+            Clique no botão
+        </div>
+
+    <script>
+        var res = document.querySelector('div#result')
+        function contar(){
+            var c = 1
+            res.innerHTML = '<h2>Contando de 1 até 10 marcando os pares...</h2> <br>'
+            do{
+                if(c % 2 == 0){
+                    res.innerHTML += `<strong><mark>${c}</mark></strong>👉`
+                }else{
+                    res.innerHTML += `${c}👉`
+                }
+                c++
+            }while(c<=10)
+            res.innerHTML += `🏁`
+        }
+    </script>
