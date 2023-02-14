@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contagem</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+        }
+
+        input{
+            padding: 5px 20px 5px 20px;
+        }
+
+        input[type=button]{
+            background-color: green;
+            color: white;
+            padding: 5px 30px 5px 30px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        p{
+            text-align: justify;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Contando</h1>
+    <p>Escolha um número de início e um número final, o programa irá fazer a contagem do início até o final dos números que você escolheu! <br> Nesse programa é possível usar números negativos, podendo fazer contagens de forma crescente e decrescente!</p>
+    <p>
+        <label for="txtn">Valor Inicial: 
+            <input type="number" name="n" id="txti">
+        </label>
+    </p>
+    <p>
+        <label for="txtn">Valor Final: 
+            <input type="number" name="n" id="txtf">
+        </label>
+    </p>
+    <input type="button" value="Contar" onclick="contar()">
+    <div id="result">
+        Preencha os dados e aperte o botão!
+    </div>
+
+    <script>
+        var res = document.querySelector('div#result')
+        function contar(){
+            var txti = document.querySelector('input#txti')
+            var txtf = document.querySelector('input#txtf')
+            var ni = Number(txti.value)
+            var nf = Number(txtf.value)
+            var c = ni
+                if(ni == nf){
+                    res.innerHTML = 'Não foi possível contar, os números são iguais!'
+                }else{
+                    res.innerHTML = `<h2>Contando de ${ni} até ${nf}...</h2>`
+                    if(c < nf){
+                        for(var c = ni; c<=nf; c++){
+                            res.innerHTML += `${c} 👉`
+                        }
+                    }else if(c > nf){
+                        for(var c = ni; c>=nf; c--){
+                            res.innerHTML += `${c} 👉`
+                        }
+                    }
+                }
+                if(ni == nf){
+                    res.innerHTML += ''
+                }else{
+                    res.innerHTML += '🏁'
+                }
+        }
+    </script>
