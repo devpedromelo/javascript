@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tabuada</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+            background-color: rgb(2, 73, 2);
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+            font-size: 2.2em;
+            text-shadow: 5px 5px 0px black;
+        }
+
+        main{
+            background-color: white;
+            margin: auto;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.293);
+        }
+
+        input{
+            padding: 5px 20px 5px 20px;
+        }
+
+        input[type=button]{
+            background-color: green;
+            color: white;
+            padding: 5px 30px 5px 30px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        p{
+            text-align: justify;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Tabuada</h1>
+    <main>
+        <p>Escolha um número e mostrarei a sua tabuada!</p>
+        <p>
+            <label for="txtn">Número:
+                <input type="number" name="n" id="txtn">
+            </label>
+        </p>
+        <input type="button" value="Gerar Tabuada" onclick="contar()">
+        <div id="result">
+            Preencha os dados e aperte o botão!
+        </div>
+    </main>
+
+    <script>
+        var res = document.querySelector('div#result')
+        function contar(){
+            var txtn = document.querySelector('input#txtn')
+            var n = Number(txtn.value)
+            res.innerHTML = ''
+            res.innerHTML = `<h2>Tabuada de ${n}: <br></h2>`
+            res.style.textAlign = 'center'
+                for(var c = 0; c<=10; c++){
+                    var resultado = n*c
+                    res.innerHTML += `${n} x ${c} = ${resultado} <br>`
+                }
+        }
+    </script>

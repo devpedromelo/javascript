@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fatorial de um Número</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+        body{
+            font-family: 'Poppins', 'san-serif';
+            background-color: rgb(2, 73, 2);
+        }
+
+        h1{
+            text-align: center;
+            color: white;
+            font-size: 2.2em;
+            text-shadow: 5px 5px 0px black;
+        }
+
+        main{
+            background-color: white;
+            margin: auto;
+            padding: 10px;
+            width: 500px;
+            border-radius: 8px;
+            box-shadow: 3px 3px 4px rgba(255, 255, 255, 0.293);
+        }
+
+        input{
+            padding: 5px 20px 5px 20px;
+        }
+
+        input[type=button]{
+            background-color: green;
+            color: white;
+            padding: 5px 30px 5px 30px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        p{
+            text-align: justify;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Fatorial de um Número</h1>
+    <main>
+        <p>Escolha um número (entre 1 e 21) e mostrarei o seu fatorial!</p>
+        <p>
+            <label for="txtn">Número:
+                <input type="number" name="n" id="txtn" max="21" min="1">
+            </label>
+        </p>
+        <input type="button" value="Gerar Fatorial" onclick="contar()">
+        <div id="result">
+            Preencha os dados e aperte o botão!
+        </div>
+    </main>
+
+    <script>
+        var res = document.querySelector('div#result')
+        function contar(){
+            var txtn = document.querySelector('input#txtn')
+            var n = Number(txtn.value)
+            var c = n -1
+            var fatorial = n*c
+            res.innerHTML = `<h2>Fatorial de ${n}!</h2><br>`
+            res.innerHTML += `${n} x `
+                while(c > 1){
+                    res.innerHTML += `${c} x `
+                    c--
+                    fatorial = fatorial*c
+                }
+            res.innerHTML += ` 1 = ${fatorial.toLocaleString('pt-br')}`//para aparecer os pontos de mil, milhões....
+        }
+    </script>
