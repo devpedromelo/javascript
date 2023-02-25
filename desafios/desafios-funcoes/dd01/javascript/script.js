@@ -24,9 +24,8 @@ function inList(n, l){
 function adicionar(){
     if(isNum(num) && inList(num, array)){
         array.push(num.value)
-        var item = document.createElement('option')
-        item.setAttribute('id', 'msg1')
-        item.text = `O número ${num.value} foi adicionado!`
+        item = document.createElement('option')
+        item.innerText = `O número ${num.value} foi adicionado!`
         select.appendChild(item)
         num.value = ''
         num.focus()
@@ -46,12 +45,11 @@ function remover(){
         }
     }
 
-    function apagarMsg(){
+    /*function apagarMsg(){
         setTimeout(function(){
             document.getElementById('msg1').innerText = ''
-            item.style.background = 'white'
-        }, 3000);
-    }
+        }, 100);
+    }*/
 
 
     if(isList(num, array)){
@@ -59,6 +57,7 @@ function remover(){
         //encontre a posição do índice num e remova 1 elemento
         var item = document.createElement('option')
         item.innerText = `O número ${num.value} foi REMOVIDO!`
+        //apagarMsg()
         select.appendChild(item)
         item.style.background = 'greenyellow'
     }else{
