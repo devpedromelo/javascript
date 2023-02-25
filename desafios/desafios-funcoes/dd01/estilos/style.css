@@ -39,7 +39,6 @@ input{
 }
 
 input[type=button]{
-    margin: 20px 0px 10px 140px;
     padding: 3px;
     cursor: pointer;
 }
@@ -49,4 +48,13 @@ footer{
     font-size: 1.2em;
     text-align: center;
     font-weight: 700;
+}
+
+div#buttons{
+    display: flex;
+}
+
+div#add{
+    display: flex;
+    flex-direction: column;
 }
