@@ -2,6 +2,7 @@ let num = document.querySelector('input#txtnum')
 let res = document.querySelector('div#result')
 let array = []
 let select = document.getElementById('lselect')
+var teste = document.createElement('p')
 
 //Verificando se o num está na lista e se é entre 1 e 100--------------------------------------------
 function isNum(n){ 
