@@ -6,33 +6,26 @@ console.log(currentOperationText)
 const buttons = document.querySelectorAll('#buttons-operation button')
 console.log(buttons)
 
-var currentValue = currentOperationText.innerHTML
+class calculator{
+    constructor(previousOperationText, currentOperationText){
+        this.previousOperationText = previousOperationText //impressos na tela
+        this.currentOperationText = currentOperationText
+        //impressos na tela
+        this.currentOperation = '' //digitando no momento
+    }
+}
 
 //------------------------------EVENTOS----------------------------------
 
 buttons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         const value = e.target.innerText
-        let arrayNum = [value]
-        console.log(arrayNum)
-        //sumindo sinal de igual
-        if(value == '='){
-            currentOperationText.innerHTML = ''
-        }else if(value == 'CE'){//resetando a operação mais recente
-            currentOperationText.innerHTML = ''
-            currentValue.innerHTML = ''
-        }else if(value == 'C'){ //clear
-            previousOperationText.innerHTML = ''
-            currentOperationText.innerHTML = ''
-            currentValue.innerHTML = ''
+
+//SEPARANDO O QUE É NÚMERO E O QUE NÃO É
+        if(Number(value) >= 0 || value === '.'){
+            console.log(value)
         }else{
-            currentOperationText.innerHTML += value
-        }
-        
-        //del
-        if(value == 'DEL'){
-            arrayNum.pop()
-            currentOperationText.innerHTML = arrayNum
+            console.log('op' + value)
         }
     })
 })
