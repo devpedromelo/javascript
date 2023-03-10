@@ -65,17 +65,30 @@
     <script>
         var res = document.querySelector('div#result')
         function contar(){
-            var txtn = document.querySelector('input#txtn')
-            var n = Number(txtn.value)
-            var c = n -1
-            var fatorial = n*c
-            res.innerHTML = `<h2>Fatorial de ${n}!</h2><br>`
-            res.innerHTML += `${n} x `
-                while(c > 1){
-                    res.innerHTML += `${c} x `
+            let txtn = document.querySelector('input#txtn')
+            let n = Number(txtn.value)
+            let c = n - 1
+            let fatorial = n*c
+
+            function verificando(num){
+                if(num >= 1 && num <= 21){
+                    return true
+                }else if(num < 1 && num > 21){
+                    return false
+                }
+            }
+
+            if(verificando(n) == true){
+                res.innerHTML = `<h2>Fatorial de !${n}</h2>`
+                res.innerHTML += `${n} x ${c}`
+                while(c>1){
                     c--
+                    res.innerHTML += ` x ${c}`
                     fatorial = fatorial*c
                 }
-            res.innerHTML += ` 1 = ${fatorial.toLocaleString('pt-br')}`//para aparecer os pontos de mil, milhões....
+                res.innerHTML += ` = <strong>${fatorial.toLocaleString('pt-br')}</strong>`
+            }else{
+                res.innerHTML = `[ERRO] - Digite um número entre 1 e 21`
+            }
         }
     </script>

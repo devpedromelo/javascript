@@ -1,15 +1,15 @@
 function* num(){
-    let i = 1
-    var validacao = true
+    let c = 1
+    let validacao = true
     while(validacao == true){
-        yield i++
-        if(i>20){
+        yield c++
+        if(c > 10){
             validacao = false
         }
     }
 }
 
 let numeros = num()
-for(var c of numeros){
+for(c of numeros){
     console.log(c)
 }
