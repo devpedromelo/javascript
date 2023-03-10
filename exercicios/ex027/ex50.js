@@ -1,10 +1,10 @@
-function* form(){
-    let nome = yield 'Qual seu nome?'
-    let esporte = yield 'Qual seu esporte favorito?'
-    return `Seu nome é ${nome} e seu esporte favorito é ${esporte}!`
+function* music(){
+    let m = yield 'Take What You Want'
+    let cantor = yield 'Post Malone'
+    return `A música ${m} é do cantor ${cantor}!`
 }
 
-let itc = form()
+const itc = music()
 console.log(itc.next().value)
-console.log(itc.next('Messi').value)
-console.log(itc.next('Futebol').value)
+console.log(itc.next('Take What You Want').value)
+console.log(itc.next('Post Malone').value)
