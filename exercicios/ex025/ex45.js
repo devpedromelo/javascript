@@ -1,4 +1,4 @@
-"use strict" //modo estriro
+"use strict" //modo estrito
 
 var nome = 'Neymar'
 

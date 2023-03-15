@@ -13,6 +13,8 @@ let multi = function(n1, n2){
 console.log(soma(2,2))
 console.log(multi(5,8))
 
+console.log('-----------------------------------------------------')
+
 //--------------FUNÇÕES ANÔNIMAS E CALLBACK-----------------
 
 let exibir = function(res){
