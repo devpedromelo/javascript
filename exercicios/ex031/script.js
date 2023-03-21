@@ -47,25 +47,3 @@ excluir.addEventListener('click', ()=>{
         el.remove('seletor')
     })
 })
-
-
-// function passando(){
-//     let todosSelecionados = [document.querySelector('.seletor')]
-//     todosSelecionados.map((el)=>{
-//         if(el in caixa2 == true){
-//             window.alert('Sai dessa')
-//         }else if(el in caixa2 == false){
-//             caixa2.appendChild(el)
-//             el.classList.remove('seletor')
-//             selecionadosCaixa2 = [el]
-//             console.log(selecionadosCaixa2) 
-//         }
-//     })
-// }
-
-// function repassando(){
-//     const selecionadosCaixa1 = selecionadosCaixa2
-//     selecionadosCaixa1.map((el)=>{
-//         caixa1.appendChild(el)
-//     })
-// }
