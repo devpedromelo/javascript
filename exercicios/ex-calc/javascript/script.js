@@ -5,9 +5,7 @@ const operacaoAtual = document.querySelector('#current-operation')
 console.log(operacaoAtual)
 const botoes = document.querySelectorAll('#buttons-operation button')
 console.log(botoes)
-
-let soma = 0
-let sub = 0
+const numbers = document.querySelectorAll('.number')
 
 class calculator{
     constructor(operacaoAnterior, operacaoAtual){
@@ -33,22 +31,14 @@ botoes.forEach((btn) => {
 
 function somar(){
     let valorAtual = operacaoAtual.innerHTML
-    soma = soma + Number(valorAtual)
-    operacaoAnterior.innerHTML = soma
-    console.log(soma)
-    operacaoAtual.innerHTML = ''
-}
-
-function diminuir(){
-    let valorAtual = operacaoAtual.innerHTML
-    sub = sub - Number(valorAtual)
-    operacaoAnterior.innerHTML = sub
-    console.log(sub)
-    operacaoAtual.innerHTML = ''
+    let valorAnterior = operacaoAnterior.innerHTML
+    valorAnterior = valorAtual
+    valorAnterior = ''
+    // let soma = Number(operacaoAnterior)
 }
 
 function equal(){
-    let valorAnterior = operacaoAnterior.innerHTML
-    operacaoAtual.innerHTML = valorAnterior
-    valorAnterior = ''
+    let valorAtual = operacaoAtual.innerHTML
+    operacaoAnterior.innerHTML = valorAtual
+    valorAtual = ""
 }

@@ -27,7 +27,6 @@ let op = [
     }
 ]
 
-
 soma.addEventListener('click', ()=>{
     op[0](valores)   
 })
