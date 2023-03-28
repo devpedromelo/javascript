@@ -1,3 +1,6 @@
+//---------------------------------EVERY--------------------------------------------------------
+//Ele serve para comparar todos os elementos e me retorna true se todos os elementos estiverem em conformidade
+
 const pArray = document.querySelector('#array')
 const btn = document.querySelector("#btn")
 const res = document.querySelector('#resultado')
@@ -19,7 +22,7 @@ btn.addEventListener('click', (evt)=>{
         }
         return e>=18
     })
-    if(ret){
+    if(ret==true){
          res.innerHTML = 'OK'
     }
 })

@@ -1,37 +1,46 @@
 //---------------------SELECIONANDO OS ELEMENTOS-------------------------
-const previousOperationText = document.querySelector('#previous-operation')
-console.log(previousOperationText)
-const currentOperationText = document.querySelector('#current-operation')
-console.log(currentOperationText)
-const buttons = document.querySelectorAll('#buttons-operation button')
-console.log(buttons)
+const operacaoAnterior = document.querySelector('#previous-operation')
+console.log(operacaoAnterior)
+const operacaoAtual = document.querySelector('#current-operation')
+console.log(operacaoAtual)
+const botoes = document.querySelectorAll('#buttons-operation button')
+console.log(botoes)
+
+let soma = 0
 
 class calculator{
-    constructor(previousOperationText, currentOperationText){
-        this.previousOperationText = previousOperationText //impressos na tela
-        this.currentOperationText = currentOperationText
+    constructor(operacaoAnterior, operacaoAtual){
+        this.operacaoAnterior = operacaoAnterior //impressos na tela
+        this.operacaoAtual = operacaoAtual
         //impressos na tela
-        this.currentOperation = '' //digitando no momento
+        this.operacaoAtual = '' //digitando no momento
     }
 }
 
 //------------------------------EVENTOS----------------------------------
 
-buttons.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-        const value = e.target.innerText
+botoes.forEach((btn) => {
+    btn.addEventListener("click", (el) => {
+        const value = el.target.innerText
 
 //SEPARANDO O QUE É NÚMERO E O QUE NÃO É
         if(Number(value) >= 0 || value === '.'){
-            console.log(value)
-        }else{
-            console.log('op' + value)
+            operacaoAtual.innerHTML += value
         }
     })
 })
 
+function somar(){
+    let valorAtual = operacaoAtual.innerHTML
+    soma = soma + Number(valorAtual)
+    operacaoAnterior.innerHTML = soma
+    console.log(soma)
+    operacaoAtual.innerHTML = ''
+}
+
 function equal(){
-    var currentValue = currentOperationText.innerHTML
-    previousOperationText.innerHTML = currentValue
-    currentOperationText.innerHTML = ''
+    // let sinalDeIgual = document.querySelector("#equal-btn")
+    let valorAtual = operacaoAtual.innerHTML
+    operacaoAnterior.innerHTML = valorAtual
+    valorAtual = operacaoAnterior.innerHTML
 }
