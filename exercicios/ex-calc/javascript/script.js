@@ -7,6 +7,7 @@ const botoes = document.querySelectorAll('#buttons-operation button')
 console.log(botoes)
 
 let soma = 0
+let sub = 0
 
 class calculator{
     constructor(operacaoAnterior, operacaoAtual){
@@ -38,9 +39,16 @@ function somar(){
     operacaoAtual.innerHTML = ''
 }
 
-function equal(){
-    // let sinalDeIgual = document.querySelector("#equal-btn")
+function diminuir(){
     let valorAtual = operacaoAtual.innerHTML
-    operacaoAnterior.innerHTML = valorAtual
-    valorAtual = operacaoAnterior.innerHTML
+    sub = sub - Number(valorAtual)
+    operacaoAnterior.innerHTML = sub
+    console.log(sub)
+    operacaoAtual.innerHTML = ''
+}
+
+function equal(){
+    let valorAnterior = operacaoAnterior.innerHTML
+    operacaoAtual.innerHTML = valorAnterior
+    valorAnterior = ''
 }
