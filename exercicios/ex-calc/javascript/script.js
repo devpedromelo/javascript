@@ -29,16 +29,13 @@ botoes.forEach((btn) => {
     })
 })
 
-function somar(){
-    let valorAtual = operacaoAtual.innerHTML
-    let valorAnterior = operacaoAnterior.innerHTML
-    valorAnterior = valorAtual
-    valorAnterior = ''
-    // let soma = Number(operacaoAnterior)
-}
 
 function equal(){
-    let valorAtual = operacaoAtual.innerHTML
-    operacaoAnterior.innerHTML = valorAtual
-    valorAtual = ""
+    operacaoAnterior.innerHTML = operacaoAtual.innerHTML
+    operacaoAtual.innerHTML = ''
+}
+
+function somar(){
+    operacaoAnterior.innerHTML = `${operacaoAtual.innerText} + `
+    operacaoAtual.innerHTML = ''
 }
