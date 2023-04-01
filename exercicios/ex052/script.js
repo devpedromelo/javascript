@@ -25,13 +25,35 @@ let btn = document.querySelector("#btn")
 let res = document.querySelector(".res")
 
 btn.addEventListener("click", ()=>{
+    if(tec.value != 'sim' && tec.value != 'não'){
+        window.alert("Na aba tecnológico, responda somente com sim ou não.")
+    }
     let verificacao = ''
-    verificacao = 'Carro Normal'
+    if(tipoNormal.checked){
+        res.innerHTML = ''
+        verificacao = 'Carro Normal'
         const car = new carro
         car.nome=nomeDoCarro.value
         car.portas = Number(portasDoCarro.value)
         car.gasolina = Number(gas.value)
-        res.innerHTML = `Nome do carro: ${car.nome}<br>`
+        res.innerHTML += `<h2>${verificacao}</h2>`
+        res.style.padding = '10px'
+        res.innerHTML += `Nome do carro: ${car.nome}<br>`
         res.innerHTML += `Número de portas: ${car.portas}<br>`
         res.innerHTML += `O máximo de litros que ele aguenta: ${car.gasolina}`
+    }else if(tipoLuxo.checked){
+        res.innerHTML = ''
+        verificacao = 'Carro de Luxo'
+        const car = new luxo
+        car.nome=nomeDoCarro.value
+        car.portas = Number(portasDoCarro.value)
+        car.gasolina = Number(gas.value)
+        car.tecnologico = tec.value
+        res.innerHTML += `<h2>${verificacao}</h2>`
+        res.style.padding = '10px'
+        res.innerHTML += `Nome do carro: ${car.nome}<br>`
+        res.innerHTML += `Número de portas: ${car.portas}<br>`
+        res.innerHTML += `O máximo de litros que ele aguenta: ${car.gasolina}<br>`
+        res.innerHTML += `É tecnológico: ${car.tecnologico}`
+    }
 })
