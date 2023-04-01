@@ -17,14 +17,14 @@
     margin-bottom: 10px;
 }
 
-.carro input{
+input{
     background-color: #eee;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid black;
 }
 
-.carro button{
+button{
     background-color: #888;
     cursor: pointer;
     padding: 5px;
@@ -37,4 +37,16 @@
     border-radius: 5px;
     width: 500px;
     margin: auto;
+}
+
+#lux{
+    display: none;
+}
+
+.luxImportant{
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-bottom: 10px !important;
 }

@@ -24,10 +24,17 @@ let tipoLuxo = document.querySelector("#luxo")
 let btn = document.querySelector("#btn")
 let res = document.querySelector(".res")
 
+tipoLuxo.addEventListener('click', ()=>{
+    tecLux.style.display = 'block'
+    tecLux.setAttribute("class","luxImportant")
+})
+
+tipoNormal.addEventListener('click', ()=>{
+    tecLux.style.display = 'none'
+    tecLux.removeAttribute("class","luxImportant")
+})
+
 btn.addEventListener("click", ()=>{
-    if(tec.value != 'sim' && tec.value != 'não'){
-        window.alert("Na aba tecnológico, responda somente com sim ou não.")
-    }
     let verificacao = ''
     if(tipoNormal.checked){
         res.innerHTML = ''
@@ -40,20 +47,25 @@ btn.addEventListener("click", ()=>{
         res.style.padding = '10px'
         res.innerHTML += `Nome do carro: ${car.nome}<br>`
         res.innerHTML += `Número de portas: ${car.portas}<br>`
-        res.innerHTML += `O máximo de litros que ele aguenta: ${car.gasolina}`
+        res.innerHTML += `O máximo de litros de gasolina: ${car.gasolina}L`
     }else if(tipoLuxo.checked){
-        res.innerHTML = ''
-        verificacao = 'Carro de Luxo'
-        const car = new luxo
-        car.nome=nomeDoCarro.value
-        car.portas = Number(portasDoCarro.value)
-        car.gasolina = Number(gas.value)
-        car.tecnologico = tec.value
-        res.innerHTML += `<h2>${verificacao}</h2>`
-        res.style.padding = '10px'
-        res.innerHTML += `Nome do carro: ${car.nome}<br>`
-        res.innerHTML += `Número de portas: ${car.portas}<br>`
-        res.innerHTML += `O máximo de litros que ele aguenta: ${car.gasolina}<br>`
-        res.innerHTML += `É tecnológico: ${car.tecnologico}`
+        if(tec.value != 'sim' && tec.value != 'não'){
+            window.alert("Na aba tecnológico, responda somente com sim ou não.")
+        }else{
+            res.innerHTML = ''
+            verificacao = 'Carro de Luxo'
+            const car = new luxo
+            car.nome=nomeDoCarro.value
+            car.portas = Number(portasDoCarro.value)
+            car.gasolina = Number(gas.value)
+            car.tecnologico = tec.value
+            res.innerHTML += `<h2>${verificacao}</h2>`
+            res.style.padding = '10px'
+            res.innerHTML += `Nome do carro: ${car.nome}<br>`
+            res.innerHTML += `Número de portas: ${car.portas}<br>`
+            res.innerHTML += `O máximo de litros de gasolina: ${car.gasolina}L<br>`
+            res.innerHTML += `É tecnológico: ${car.tecnologico}`
+        }
     }
+        
 })
