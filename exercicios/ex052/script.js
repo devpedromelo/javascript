@@ -35,37 +35,41 @@ tipoNormal.addEventListener('click', ()=>{
 })
 
 btn.addEventListener("click", ()=>{
-    let verificacao = ''
-    if(tipoNormal.checked){
+    if(nomeDoCarro.value == '' || portasDoCarro.value==0 || gas.value==0){
         res.innerHTML = ''
-        verificacao = 'Carro Normal'
-        const car = new carro
-        car.nome=nomeDoCarro.value
-        car.portas = Number(portasDoCarro.value)
-        car.gasolina = Number(gas.value)
-        res.innerHTML += `<h2>${verificacao}</h2>`
-        res.style.padding = '10px'
-        res.innerHTML += `Nome do carro: ${car.nome}<br>`
-        res.innerHTML += `Número de portas: ${car.portas}<br>`
-        res.innerHTML += `O máximo de litros de gasolina: ${car.gasolina}L`
-    }else if(tipoLuxo.checked){
-        if(tec.value != 'sim' && tec.value != 'não'){
-            window.alert("Na aba tecnológico, responda somente com sim ou não.")
-        }else{
+        window.alert("Preencha todos os dados para prosseguir!")
+    }else{
+        let verificacao = ''
+        if(tipoNormal.checked){
             res.innerHTML = ''
-            verificacao = 'Carro de Luxo'
-            const car = new luxo
+            verificacao = 'Carro Normal'
+            const car = new carro
             car.nome=nomeDoCarro.value
             car.portas = Number(portasDoCarro.value)
             car.gasolina = Number(gas.value)
-            car.tecnologico = tec.value
             res.innerHTML += `<h2>${verificacao}</h2>`
             res.style.padding = '10px'
             res.innerHTML += `Nome do carro: ${car.nome}<br>`
             res.innerHTML += `Número de portas: ${car.portas}<br>`
-            res.innerHTML += `O máximo de litros de gasolina: ${car.gasolina}L<br>`
-            res.innerHTML += `É tecnológico: ${car.tecnologico}`
-        }
+            res.innerHTML += `O máximo de litros de gasolina: ${car.gasolina}L`
+        }else if(tipoLuxo.checked){
+            if(tec.value != 'sim' && tec.value != 'não'){
+                window.alert("Na aba tecnológico, responda somente com sim ou não.")
+            }else{
+                res.innerHTML = ''
+                verificacao = 'Carro de Luxo'
+                const car = new luxo
+                car.nome=nomeDoCarro.value
+                car.portas = Number(portasDoCarro.value)
+                car.gasolina = Number(gas.value)
+                car.tecnologico = tec.value
+                res.innerHTML += `<h2>${verificacao}</h2>`
+                res.style.padding = '10px'
+                res.innerHTML += `Nome do carro: ${car.nome}<br>`
+                res.innerHTML += `Número de portas: ${car.portas}<br>`
+                res.innerHTML += `O máximo de litros de gasolina: ${car.gasolina}L<br>`
+                res.innerHTML += `É tecnológico: ${car.tecnologico}`
+            }
+        }      
     }
-        
 })
