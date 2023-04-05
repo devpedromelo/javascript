@@ -12,6 +12,7 @@ const clear = document.querySelector('#c')
 let res = ''
 
 let sinal = false //impedir de escrever vários operadores sem números
+let decimal = false
 
 class calculator{
     constructor(operacaoAnterior, operacaoAtual){
@@ -24,11 +25,13 @@ class calculator{
 
 ce.addEventListener("click", ()=>{
     sinal = false
+    decimal = false
     operacaoAtual.innerHTML=''
 })
 
 clear.addEventListener('click', ()=>{
     sinal = false
+    decimal = false
     operacaoAnterior.innerHTML = ''
     operacaoAtual.innerHTML = ''
 })
@@ -36,9 +39,19 @@ clear.addEventListener('click', ()=>{
 numbers.forEach((btn) => {
     btn.addEventListener("click", (el)=>{
         sinal = false
-        const value = el.target.innerText
-        operacaoAtual.innerHTML += value
-        res += Number(value)
+        let value = el.target.innerHTML
+        if(value =="."){
+            if(!decimal){
+                decimal = true
+                if(operacaoAtual.innerHTML == ''){
+                    operacaoAtual.innerHTML += '0'+value
+                }else{
+                    operacaoAtual.innerHTML += value
+                }
+            }
+        }else{
+            operacaoAtual.innerHTML += value
+        }
     })
 })
 
@@ -47,26 +60,19 @@ botoes.forEach((btn)=>{
         const op = el.target.innerText
         if(sinal==false){
             sinal = true
-                if(op=='+'){
-                    let soma = Number(res)
-                    res = ''
-                    console.log(soma)
-                    operacaoAtual.innerHTML += '+'
-                }
-                if(op=='x'){
-                    operacaoAtual.innerHTML += '*'
-                }
-                if(op=='-'){
-                    operacaoAtual.innerHTML += '-'
-                }
-                if(op=='/'){
-                    operacaoAtual.innerHTML += '/'
-                }
+            if(op=="x"){
+                operacaoAtual.innerHTML += "*"
+            }else{
+                operacaoAtual.innerHTML += op
+            }
         }
     })
 })
 
 function equal(){
+    sinal = false
+    decimal = false
+    res = eval(operacaoAtual.innerHTML)
     operacaoAnterior.innerHTML = operacaoAtual.innerHTML
-    operacaoAtual.innerHTML = ''
+    operacaoAtual.innerHTML = res
 }
