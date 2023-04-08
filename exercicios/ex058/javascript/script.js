@@ -7,12 +7,15 @@ const botoes = [...document.querySelectorAll('.op')]
 console.log(botoes)
 const numbers = [...document.querySelectorAll('.number')]
 console.log(numbers)
-const ce = document.querySelector('#ce')
+const copiar = document.querySelector('#copiar')
 const clear = document.querySelector('#c')
 let res = ''
 
 let sinal = false //impedir de escrever vários operadores sem números
 let decimal = false
+
+let calculadora = document.querySelector("#calc")
+let aba = document.querySelector("#aba")
 
 class calculator{
     constructor(operacaoAnterior, operacaoAtual){
@@ -23,10 +26,19 @@ class calculator{
 
 //------------------------------EVENTOS-----------------------------------
 
-ce.addEventListener("click", ()=>{
-    sinal = false
-    decimal = false
-    operacaoAtual.innerHTML=''
+copiar.addEventListener("click", ()=>{
+    navigator.clipboard.writeText(operacaoAtual.innerHTML) //copiar
+    //read= área de ler(colar)
+
+
+
+    //====================================
+    // teste.select()
+    // teste.setSelectionRange(0,9999999)//mobile
+    // navigator.clipboard.writeText(teste.value) 
+    
+    //em inputs é interessante colocar um select e o setSelectionRange() antes de copiar para não ter pro blemas ao copiar em dispositivos mobile
+    //====================================
 })
 
 clear.addEventListener('click', ()=>{
@@ -79,3 +91,11 @@ function equal(){
     operacaoAnterior.innerHTML = operacaoAtual.innerHTML
     operacaoAtual.innerHTML = res
 }
+
+aba.addEventListener("click", ()=>{
+    if(calculadora.style.left == '0px'){
+        calculadora.style.left = '-400px'
+    }else{
+        calculadora.style.left = '0px'
+    }
+})
