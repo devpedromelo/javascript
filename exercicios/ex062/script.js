@@ -10,7 +10,6 @@ let larguraPalco = palco.offsetWidth//pega a largura exata do elemento que relac
 let alturaPalco = palco.offsetHeight//pega a largura exata do elemento que relacionarmos
 let bolas=[]
 let numBolas = 0
-let validacao = ''
 
 class Bola{
     constructor(arrayBolas, palco){
@@ -22,26 +21,63 @@ class Bola{
         this.pY = Math.floor(Math.random()*(alturaPalco-this.tamanho))//posição aleatória do eixo y que a bolinha vai surgir
         this.velX = Math.floor(Math.random()*2)+0.5
         this.velY = Math.floor(Math.random()*2)+0.5
-        this.dirX = Math.floor(Math.random()*10)>5?1:-1
-        this.dirY = Math.floor(Math.random()*10)>5?1:-1
+        this.dirX = Math.floor(Math.random()*10)>5?+1:-1
+        this.dirY = Math.floor(Math.random()*10)>5?+1:-1
         this.arrayBolas = arrayBolas
         this.palco = palco
-        this.id = Date.now()+"_"+Math.floor(Math.random()*1000000000000000000)
-        // this.desenhar()
-        // this.controle=setInterval(this.controlar, 10)
+        this.id = Math.floor(Math.random()*1000000000000000000)
+        this.desenhar()
+        this.controle=setInterval(this.controlar, 10)
         this.desenho = document.getElementById(this.id)
-    }
-    minhaPos=()=>{
-
-    }
-    remover=()=>{
-
+        numBolas++
+        numObjetos.innerHTML = numBolas 
     }
     desenhar=()=>{
-    
+        const criandoBolas = document.createElement("div")
+        criandoBolas.setAttribute('id',this.id)
+        criandoBolas.setAttribute('class', 'bola')
+        criandoBolas.style.height = `${this.tamanho}px`
+        criandoBolas.style.width = `${this.tamanho}px`
+        criandoBolas.style.left=`${this.pX}px`
+        criandoBolas.style.top=`${this.pY}px`
+        criandoBolas.style.background = `rgb(${this.r},${this.g},${this.b})`
+        this.palco.appendChild(criandoBolas)
     }
+    
     controlar=()=>{
-        
+        this.colisaoBordas()
+        this.pX+=this.dirX*this.velX
+        this.pY+=this.dirY*this.velY
+        this.desenho.style.height = `${this.tamanho}px`
+        this.desenho.style.width = `${this.tamanho}px`
+        this.desenho.style.left=`${this.pX}px`
+        this.desenho.style.top=`${this.pY}px`
+        this.desenho.style.background = `rgb(${this.r},${this.g},${this.b})`
+        this.palco.appendChild(this.desenho)
+        if((this.pX > larguraPalco) || (this.pY > alturaPalco)){
+            this.remover()
+        }
+    }
+
+    colisaoBordas = ()=>{
+        if(this.pX+this.tamanho >= larguraPalco){
+            this.dirX = -1
+        }else if(this.pX <= 0){
+            this.dirX = 1
+        }
+
+        if(this.pY+this.tamanho >= alturaPalco){
+            this.dirY = -1
+        }else if(this.pY <= 0){
+            this.dirY = 1
+        }
+    }
+
+    remover=()=>{
+        clearInterval(this.controle)
+        this.desenho.remove()
+        numBolas--
+        numObjetos.innerHTML = numBolas 
     }
 }
 
@@ -54,25 +90,12 @@ adicionar.addEventListener("click", (evt)=>{
     let quantidade = quantidadeDeObjetos.value
     for(let i=0;i<quantidade;i++){
         //Criar novas bolinhas
-        let bola = new Bola
-        let criandoBolas = document.createElement("div")
-        criandoBolas.setAttribute('class', 'bola')
-        criandoBolas.style.height = `${bola.tamanho}px`
-        criandoBolas.style.width = `${bola.tamanho}px`
-        criandoBolas.style.left=`${bola.pX}px`
-        criandoBolas.style.top=`${bola.pY}px`
-        let alt = criandoBolas.style.top=`${bola.dirX}px`
-        let larg = criandoBolas.style.left=`${bola.dirY}px`
-        setInterval(()=>{
-            bola = new Bola
-            alt = criandoBolas.style.top=`${bola.dirX}px`
-            larg = criandoBolas.style.left=`${bola.dirY}px`
-        },1000)
-        criandoBolas.style.background = `rgb(${bola.r},${bola.g},${bola.b})`
-        palco.appendChild(criandoBolas)
+        bolas.push(new Bola(bolas, palco))
     }
 })
 
 remover.addEventListener("click", (evt)=>{
-    palco.removeChild(bolas)
+    bolas.map((b)=>{
+        b.remover()
+    })
 })

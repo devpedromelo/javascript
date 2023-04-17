@@ -62,5 +62,4 @@ input[type="number"], #num-objetos{
 .bola{
     position: absolute;
     border-radius: 100px;
-    transition: all 4s ease;
 }
