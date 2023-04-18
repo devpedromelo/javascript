@@ -31,8 +31,8 @@ hora=()=>{
     if(alarmeAtivado == true && alarmeTocando == false){
         if(horario>=alarme){
             alarmeTocando = true
-            res.innerHTML='ALARME ESTÁ TOCANDO!!!!!!!!!!!!!!!!!!!!!!!!!'
-            res.classList.add("alarme")
+            txtHoraDoAlarme.innerHTML = "ALARME ESTÁ TOCANDO!!!!!"
+            document.body.style.background = 'rgb(255, 64, 64)'
         }
     }
 }
@@ -41,10 +41,12 @@ const intervalo = setInterval(hora,1000)
 
 desativar.addEventListener("click", ()=>{
     txtHoraDoAlarme.innerHTML = "Hora do Alarme: 00:00:00"
+    hAlarme.value = '0'
+    mAlarme.value = '0'
     alarmeAtivado = false
     alarmeTocando = false
     secAtual = null
     alarme = null
     res.innerHTML=''
-    res.classList.remove("alarme")
+    document.body.style.background='white'
 })

@@ -11,13 +11,16 @@
     <div id="timer">
         <div id="relogio">00:00:00</div>
         <div id="alarme">
-            <label id="horaDoAlarme">Hora do Alarme: 00:00:00</label><br>
-            <label id="tempoDoAlarme">Definir Alarme</label>
-            <label for="h">Hora:</label>
-            <input type="number" name="h" id="h" value="0">
-            <label for="m">Min:</label>
-            <input type="number" name="m" id="m" value="0">
+            <div id="definir"><label id="horaDoAlarme">HORA DO ALARME: 00:00:00</label><br></div>
         </div>
+            <div id="definindo">
+                <label id="H" for="h">Hora:
+                    <input type="number" name="h" id="h" value="0">
+                </label>
+                <label id="M" for="m">Min:
+                    <input type="number" name="m" id="m" value="0">
+                </label>
+            </div>
         <div id="comandos">
             <button id="ativar">Ativar</button>
             <button id="desativar">Desativar</button>

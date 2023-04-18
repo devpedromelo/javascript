@@ -12,12 +12,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 350px;
-    background-color: #eee;
+    width: 55vw;
+    background-color: #878787;
     border-radius: 5px;
-    margin: 10px;
+    margin: auto;
+    margin-top: 150px;
     padding: 20px;
-    border: 3px solid #888;
+    border: 3px solid #686868;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.422);
 }
 
 #relogio{
@@ -25,12 +27,14 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #444;
+    background-color: #4b4b4b;
     color: rgb(3, 197, 3);
-    width: 250px;
+    height: 120px;
+    width: 88%;
+    border: 2px solid black;
     border-radius: 5px;
-    padding: 20px;
-    font-size: larger;
+    padding: 15px;
+    font-size: 65px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 800;
 }
@@ -40,22 +44,80 @@
     flex-direction: column;
 }
 
+#definir{
+    background-color: #4b4b4b;
+    color: #eee;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+    margin: auto;
+    margin-top: 10px;
+    width: 490px;
+    text-align: center;
+}
+
+#definindo{
+    padding: 10px;
+}
+
+label#H{
+    background-color: #4b4b4b;
+    padding: 10px;
+    margin-left: 225px;
+    border-radius: 4px;
+    font-size: 17px;
+    border: 1px solid black;
+    color: #eee;
+}
+
+label#M{
+    background-color: #4b4b4b;
+    padding: 10px;
+    margin-left: 40px;
+    border-radius: 4px;
+    font-size: 17px;
+    border: 1px solid black;
+    color: #eee;
+}
+
 input[type='number']{
+    background-color: #cacaca;
     border: 1px solid black;
     font-size: larger;
     cursor: pointer;
     border-radius: 5px;
-    padding: 7px;
+    padding: 1px;
+    width: 10%;
 }
 
 button{
     background-color: #aaa;
-    padding: 15px 25px;
-    margin: 5px;
+    padding: 15px 65px;
+    margin:10px;
     border-radius: 5px;
     cursor: pointer;
+    border: 1px solid black;
+}
+
+button#ativar{
+    background-color: rgb(114, 151, 114);
+}
+
+button#ativar:hover{
+    background-color: rgb(91, 199, 91);
+}
+
+button#desativar{
+    background-color: rgb(151, 114, 114);
+}
+
+button#desativar:hover{
+    background-color: rgb(184, 73, 73);
 }
 
 .alarme{
-    color: red !important;
+    background-color: rgb(255, 64, 64) !important;
 }
