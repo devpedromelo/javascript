@@ -1,34 +1,35 @@
 const carro = document.getElementById("carro")
 const btnEsquerda = document.getElementById("esquerda")
 const btnDireita = document.getElementById("direita")
+const parar = document.querySelector("#parar")
 
 const init = ()=>{
     carro.style.position = 'relative'
     carro.style.left = '0px'
 }
 
+let animacao = null
+
+const moverDir = (dir)=>{
+    carro.style.left = parseInt(carro.style.left)+(10*dir)+"px"
+}
+
+const moverEsq = (esq)=>{
+    carro.style.left = parseInt(carro.style.left)+(10*esq)+"px"
+}
+
+parar.addEventListener("click",()=>{
+    clearInterval(animacao)
+})
+
 btnEsquerda.addEventListener("click",()=>{
-    let pos = parseInt(carro.style.left)
-    if(pos==0){
-        pos=0
-        carro.style.left = `${pos}px`
-    }else{
-        pos-=10
-        carro.style.left = `${pos}px`
-    }
-    console.log(pos)
+    clearInterval(animacao)
+    animacao=setInterval(moverDir,20,-1)
 })
 
 btnDireita.addEventListener("click",()=>{
-    let pos = parseInt(carro.style.left)
-    if(pos==960){
-        pos=960
-        carro.style.left = `${pos}px`
-    }else{
-        pos+=10
-        carro.style.left = `${pos}px`
-    }
-    console.log(pos)
+    clearInterval(animacao)
+    animacao=setInterval(moverEsq,20,1)
 })
 
 window.addEventListener('load',init())
