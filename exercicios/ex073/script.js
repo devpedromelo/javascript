@@ -12,11 +12,13 @@ console.log(nome.concat(jogo))
 console.log(nome.indexOf("A"))
 console.log(nome.lastIndexOf("A"))
 
+console.log("-----------------------------------")
+
 console.log(nome.localeCompare(nome2))
 
-//Valor de Retorno = 1: Significa que a string principal(primeira string a SER COMPARADA) NÃO mudou, a que mudou foi a segunda string.
+//Valor de Retorno = 1: Significa que a string principal(primeira string a SER COMPARADA) NÃO mudou ou que ela é maior que a segunda, a que mudou foi a segunda string.
 
-//Valor de Retorno = -1: Significa que a string principal(primeira string a SER COMPARADA) MUDOU em relação a string secundária.
+//Valor de Retorno = -1: Significa que a string principal(primeira string a SER COMPARADA) MUDOU em relação a string secundária ou que a primária é menor que a secundária.
 
 //Valor de Retorno = 0: Significa que a string principal(primeira string a SER COMPARADA) e a string secundária são IGUAIS.
 
