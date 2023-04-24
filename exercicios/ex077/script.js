@@ -1,6 +1,5 @@
 const carro = document.getElementById("carro")
-const btnEsquerda = document.getElementById("esquerda")
-const btnDireita = document.getElementById("direita")
+const play = document.querySelector("#play")
 const parar = document.querySelector("#parar")
 
 let tamWindow = null
@@ -14,20 +13,20 @@ const init = ()=>{
 
 let animacao = null
 
-const moverEsq = (esq)=>{
-    if(esq < 0){
-        if(parseInt(carro.style.left)>=0){
-            carro.style.left = parseInt(carro.style.left)+(10*esq)+"px"
-            animacao = setTimeout(moverEsq,20,esq)
-        }else{
-            clearTimeout(animacao)
-        }
-    }else if(esq > 0){
+const mover = (esq)=>{
+    if(esq > 0){
         if(parseInt(carro.style.left)<=tamWindow){
             carro.style.left = parseInt(carro.style.left)+(10*esq)+"px"
-            animacao = setTimeout(moverEsq,20,esq)
+            animacao = setTimeout(mover,20,esq)
         }else{
-            clearTimeout(animacao)
+            animacao = setTimeout(mover,20,-1)
+        }
+    }else if(esq < 0){
+        if(parseInt(carro.style.left)>=0){
+            carro.style.left = parseInt(carro.style.left)+(10*esq)+"px"
+            animacao = setTimeout(mover,20,esq)
+        }else{
+            animacao = setTimeout(mover,20,1)
         }
     }
 }
@@ -36,14 +35,9 @@ parar.addEventListener("click",()=>{
     clearTimeout(animacao)
 })
 
-btnEsquerda.addEventListener("click",()=>{
+play.addEventListener("click",()=>{
     clearTimeout(animacao)
-    moverEsq(-1)
-})
-
-btnDireita.addEventListener("click",()=>{
-    clearTimeout(animacao)
-    moverEsq(1)
+    mover(1)
 })
 
 window.addEventListener('load',init())
