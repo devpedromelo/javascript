@@ -16,6 +16,7 @@ console.log(nome.match(/\d/ig))//apenas numeros
 console.log(nome.match(/\s/ig))//espaços
 console.log(nome.match(/\bL/ig))//caracteres
 
+console.log("-------------------------------------")
 
 //QUANTIFICADORES
 console.log(nome.match(/o+|i+/ig))
