@@ -85,25 +85,8 @@ const sectionCenter = document.querySelector(".section-center");
 
 const filterBtns = document.querySelectorAll(".filter-btn");
 
-window.addEventListener("DOMContentLoaded", function(){//DOMContentLoaded O evento DOMContentLoaded é acionado quando todo o HTML foi completamente carregado e analisado, sem aguardar pelo CSS, imagens, e subframes para encerrar o carregamento.
+window.addEventListener("DOMContentLoaded", function(){//O evento DOMContentLoaded é acionado quando todo o HTML foi completamente carregado e analisado, sem aguardar pelo CSS, imagens, e subframes para encerrar o carregamento.
     displayMenuItems(menu);
-});
-
-filterBtns.forEach(function(btn){
-    btn.addEventListener("click", function(e){
-        const category = e.currentTarget.dataset.id;
-        const menuCategory = menu.filter(function(menuItem){
-            // console.log(menuItem)
-            if(menuItem.category === category){
-                return menuItem
-            }
-        });
-        if(category === 'all'){
-            displayMenuItems(menu)
-        }else{
-            displayMenuItems(menuCategory)
-        };
-    });
 });
 
 function displayMenuItems(menuItems){
@@ -125,3 +108,20 @@ function displayMenuItems(menuItems){
     displayMenu = displayMenu.join("");//O método join() junta todos os elementos de um array (ou um array-like object) em uma string e retorna esta string.
     sectionCenter.innerHTML = displayMenu
 }
+
+filterBtns.forEach(function(btn){
+  btn.addEventListener("click", function(e){
+      const category = e.currentTarget.dataset.id;
+      const menuCategory = menu.filter(function(itemMenu){
+          // console.log(menuItem)
+          if(itemMenu.category === category){
+              return itemMenu
+          }
+      });
+      if(category === 'all'){
+          displayMenuItems(menu)
+      }else{
+          displayMenuItems(menuCategory)
+      };
+  });
+});
