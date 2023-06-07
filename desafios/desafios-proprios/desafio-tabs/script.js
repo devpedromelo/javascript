@@ -1,6 +1,6 @@
-const btns = document.querySelectorAll(".tab-btn");
-const about = document.querySelector(".about");
-const articles = document.querySelectorAll(".content");
+const btns = document.querySelectorAll(".tab-btn")
+const about = document.querySelector(".about")
+const articles = document.querySelectorAll(".content")
 
 about.addEventListener("click", function(e){
     const id = e.target.dataset.id;
@@ -9,10 +9,10 @@ about.addEventListener("click", function(e){
             btn.classList.remove("active");
             e.target.classList.add("active");
         });
-        articles.forEach(function(i){
-            i.classList.remove("active");
+        articles.forEach(function(a){
+            a.classList.remove("active");
         });
         const element = document.getElementById(id)
-        element.classList.add("active");
+        element.classList.add("active")
     };
 });
