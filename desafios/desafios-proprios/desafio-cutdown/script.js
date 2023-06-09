@@ -11,7 +11,7 @@ const months = [
     "October",
     "November",
     "December",
-  ];
+];
   const weekdays = [
     "Sunday",
     "Monday",
@@ -20,7 +20,7 @@ const months = [
     "Thursday",
     "Friday",
     "Saturday",
-  ];
+];
 
   const giveaway = document.querySelector(".giveaway");
   const deadline = document.querySelector(".deadline");
@@ -60,7 +60,7 @@ function getRemainingTime(){
   let days = t/oneDay;
   days = Math.floor(days);
   console.log(days);
-  let hours = Math.floor((t%oneDay) / oneHour);
+  let hours = Math.floor((t % oneDay) / oneHour);
   console.log(hours);
   let minutes = Math.floor((t % oneHour) / oneMinute);
   let seconds = Math.floor((t % oneMinute) / 1000)
